@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri&aacute;ngulo de pascal</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="icon"
+        href="assets/kisspng-pascal-s-triangle-mathematics-fibonacci-number-5b3262792bccb5.3969652815300286651794.png">
+    <style>
+        .navbar-brand {
+            font-size: 28px;
+            font-style: italic;
+        }
+
+        @media(max-width:332px) {
+            .navbar-brand {
+                font-size: 18px;
+            }
+        }
+
+        @media(max-width:460px) {
+            #triangle{
+                font-size: 12px;
+            }
+        }
+
+        @media(max-width:250px) {
+            .navbar-brand {
+                font-size: 14px;
+            }
+        }
+
+        p span {
+            margin: 25px;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #triangle::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3);
+            border-radius: 1px;
+            background-color: transparent;
+        }
+
+        #triangle::-webkit-scrollbar {
+            width: 1px;
+            background-color: #F5F5F5;
+        }
+
+        #triangle::-webkit-scrollbar-thumb {
+            -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3);
+            border-radius: 1px;
+            background-color: rgb(57, 53, 245);
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand">Tri&aacute;ngulo de Pascal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation" style="padding: .5px;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                </ul>
+                <form class="d-flex">
+                    <a tabindex="0" class="btn btn-danger btn-sm" role="button" data-bs-toggle="popover"
+                        data-bs-trigger="focus" title="Desarrolladores" data-bs-content="" id="popover">¿Qui&eacute;nes
+                        somos?</a>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                <form class="row" action>
+
+                    <div class="col-4">
+                        <h1 class="text-primary" style="font-size: 40pt;">C</h1>
+                    </div>
+                    <div class="col-4">
+                        <br>
+
+                        <input type="number" class="form-control text-center" id="row" min="0" placeholder="-">
+
+                    </div>
+                    <div class="col-4">
+                        <br>
+                        <input type="number" class="form-control text-center" id="col" min="0" placeholder="-">
+
+                    </div>
+                    <div class="col-12">
+                        <p class="text-danger d-none" style="font-size: 12px;" id="validator">Obligatorio campo fila</p>
+                    </div>
+                    <div class="col-12">
+                        <br>
+
+                        <input type="button" class="btn btn-primary btn-sm" id="goTriangle" value="Calcular">
+                        <input type="reset" class="btn btn-primary btn-sm" value="Borrar" id="reset-triangle">
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-12 col-sm-8" style="margin-top: 30px;">
+                <h2 class="text-center text-primary">Tri&aacute;ngulo Generado</h2>
+                <div id="triangle" style="overflow-x: scroll;">
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="dist/js/bootstrap.bundle.js"></script>
+    <script src="dist/js/jquery-3.5.1.js"></script>
+    <script src="dist/js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            enabledPopover();
+            $(`#goTriangle`).click(function (e) {
+                createTriangle();
+                e.preventDefault();
+            });
+            $("#reset-triangle").click(function (e) {
+                $("#triangle").html("");
+
+            });
+        });
+    </script>
+</body>
+
+</html>
